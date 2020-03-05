@@ -143,7 +143,7 @@ void deleteCharOnMatrix(int files, int columnes, char matrix[files][columnes], i
 		3.3.1-Establecer la ventana activa
 */
 void setActiveWindow(int appData[], int aw) {
-	
+	appData[4] = aw;
 }
 
 /*
@@ -157,89 +157,88 @@ void iniWindow(int appData[], char Windows[][appData[1]][appData[2]], int Window
 		3.3.3-Inicializar todas las ventanas (todas quedan vacías)
 */
 void iniWindows(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2]) {
-		
+
 }
 
 /*
 		3.3.4-Imprimir información de la aplicación
 */
 void printWindowInfo(int appData[], int appCursors[][2]) {
-		
+
 }
 
 /*
 		3.3.5-Imprimir una pantalla por consola
 */
 void printWindow(int appData[], char matrix[appData[1]][appData[2]]) {
-		
+
 }
 
 /*
 		3.3.6-Imprimir la pantalla activa de la aplicación
 */
 void printCurrentWindow(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2]) {
-		
+
 }
 
 /*
 		3.3.7-Comprobar que la fila es legal en la aplicación
 */
 bool isLegalFile(int appData[], int y) {
-		
+
 }
 
 /*
 		3.3.8-Establecer la fila del cursor en la ventana activa
 */
 void setYCursorOnWindow(int appData[], int appCursors[][2], int y) {
-		
+
 }
 
 /*
 		3.3.9-Comprobar que la columna es legal en la aplicación
 */
 bool isLegalColumn(int appData[], int x) {
-		
+
 }
 
 /*
 		3.3.10-Establecer la columna del cursor en la ventana activa
 */
 void setXCursorOnWindow(int appData[], int appCursors[][2], int x) {
-		
+
 }
 
 /*
 		3.4.1-Insertar un carácter en la posición actual en la ventana activa
 */
 void insertCharOnWindow(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2], char c) {
-		
+
 }
 
 /*
 		3.4.2-Borrar el carácter de la posición actual en la ventana activa
 */
 void deleteCurrentPositionOnWindow(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2]) {
-		
+
 }
 
 /*
 		Función principal
 */
 int main(){
-	int a = 10, b = 5, c = 5, d, e, f;
-	char array[a];
-	char matriu[b][c];
 
-	/*
-	for (c = 0; c < a; c++) {
-		scanf("%c", &array[c]);
-	}
-	*/
+	 /*
+	 appData:
+	 0 - N ventanas
+	 1 - N filas
+	 2 - N columnas
+	 3 - ventana activa
+	 */
 
-	iniEmptyMatrix(b, c, matriu);
-	deleteCharOnMatrix(b, c, matriu, 2, 2);
-	printMatrix(b, c, matriu);
+	int appData[4];
+	char windows[appData[0]][appData[1]][appData[2]];
+	int appCursors[appData[0]][2];
 
 	return 0;
 }
