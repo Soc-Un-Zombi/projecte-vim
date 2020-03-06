@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #define ESPAI ' '
 
 /*
@@ -80,11 +81,9 @@ void insertCharOnArray(int columnes, char array[], int columna, char c) {
 		3.2.1-Inicializar una matriz vacía de unas dimensiones determinadas
 */
 void iniEmptyMatrix(int files, int columnes, char matrix[files][columnes]) {
-	int f, c;
+	int f;
 	for (f = 0; f < files; f++) {
-		for (c = 0; c < columnes; c++) {
-			matrix[f][c] = ESPAI;
-		}
+		iniEmptyArray(columnes, matrix[f]);
 	}
 }
 
@@ -92,12 +91,10 @@ void iniEmptyMatrix(int files, int columnes, char matrix[files][columnes]) {
 		3.2.2-Imprimir una matriz por consola
 */
 void printMatrix(int files, int columnes, char matrix[files][columnes]) {
-	int f, c;
+	int f;
 	for (f = 0; f < files; f++) {
 		printf(" %d|", f);
-		for (c = 0; c < columnes; c++) {
-			printf("%c", matrix[f][c]);
-		}
+		printArray(columnes, matrix[f]);
 		printf("|\n");
 	}
 }
@@ -106,37 +103,14 @@ void printMatrix(int files, int columnes, char matrix[files][columnes]) {
 		3.2.3-Insertar un carácter en una posición de la matriz
 */
 void insertCharOnMatrix(int files, int columnes, char matrix[files][columnes], int fila, int columna, char c) {
-	char moveright[columnes];
-	int i;
-	for (i = columna + 1; i < columnes; i++) {
-		moveright[i] = matrix[fila][i-1];
-	}
-	matrix[fila][columna] = c;
-	for (i = columna + 1; i < columnes; i++) {
-		matrix[fila][i] = moveright[i];
-	}
+	insertCharOnArray(columnes, matrix[fila], columna, c);
 }
 
 /*
 		3.2.4-Borrar un carácter de una posición de la matriz
 */
 void deleteCharOnMatrix(int files, int columnes, char matrix[files][columnes], int fila, int columna) {
-	char deletecharacter[columnes];
-	int i;
-	for (i = 0; i < columnes; i++) {
-		if (i < columna) {
-			deletecharacter[i] = matrix[fila][i];
-		}
-		if (i > columna) {
-			deletecharacter[i-1] = matrix[fila][i];
-		}
-		if (i == columnes-1) {
-			deletecharacter[i] = ESPAI;
-		}
-	}
-	for (i = 0; i < columnes; i++) {
-		matrix[fila][i] = deletecharacter[i];
-	}
+	shiftLeftArray(columnes, matrix[fila], columna);
 }
 
 /*
@@ -150,21 +124,25 @@ void setActiveWindow(int appData[], int aw) {
 		3.3.2-Inicializar una ventana (queda vacía)
 */
 void iniWindow(int appData[], char Windows[][appData[1]][appData[2]], int Window) {
-	
+	iniEmptyMatrix(appData[1], appData[2], Windows[Window]);
 }
+
 
 /*
 		3.3.3-Inicializar todas las ventanas (todas quedan vacías)
 */
-void iniWindows(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2]) {
-
+void iniWindows(int appData[], char Windows[][appData[1]][appData[2]], int appCursors[][2]) {
+	int w;
+	for (w = 0; w < appData[0]; w++) {
+		iniWindow(appData, Windows, w);
+	}
 }
 
 /*
 		3.3.4-Imprimir información de la aplicación
 */
 void printWindowInfo(int appData[], int appCursors[][2]) {
-
+	
 }
 
 /*
