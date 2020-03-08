@@ -132,9 +132,15 @@ void iniWindow(int appData[], char Windows[][appData[1]][appData[2]], int Window
 		3.3.3-Inicializar todas las ventanas (todas quedan vacías)
 */
 void iniWindows(int appData[], char Windows[][appData[1]][appData[2]], int appCursors[][2]) {
-	int w;
+	int w, f, c;
 	for (w = 0; w < appData[0]; w++) {
 		iniWindow(appData, Windows, w);
+	}
+
+	for (f = 0, f < appData[0], f++) {
+		for (c = 0, c < 2, c++) {
+			appCursors[f][c] = 0;
+		}
 	}
 }
 
