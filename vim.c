@@ -117,7 +117,7 @@ void deleteCharOnMatrix(int files, int columnes, char matrix[files][columnes], i
 		3.3.1-Establecer la ventana activa
 */
 void setActiveWindow(int appData[], int aw) {
-	appData[4] = aw;
+	appData[3] = aw;
 }
 
 /*
@@ -142,14 +142,16 @@ void iniWindows(int appData[], char Windows[][appData[1]][appData[2]], int appCu
 		3.3.4-Imprimir información de la aplicación
 */
 void printWindowInfo(int appData[], int appCursors[][2]) {
-	
+
 }
 
 /*
 		3.3.5-Imprimir una pantalla por consola
 */
 void printWindow(int appData[], char matrix[appData[1]][appData[2]]) {
-
+	printf("   ----------\n");
+	printMatrix(appData[1], appData[2], matrix);
+	printf("   ----------\n");
 }
 
 /*
