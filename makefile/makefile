@@ -2,8 +2,8 @@
 #Archivo makefile.
 
 #compilador programa principal:
-programa: main.o arrays.o matrices.o ventanas.o funciones.o
-	gcc -o programa main.o arrays.o matrices.o ventanas.o funciones.o
+programa: main.o arrays.o matrices.o ventanas.o funciones.o parser.o
+	gcc -o programa main.o arrays.o matrices.o ventanas.o funciones.o parser.o
 
 #compilador main:
 main.o: main.c edth.h
@@ -24,6 +24,10 @@ ventanas.o: ventanas.c edth.h
 #compilador funciones:
 funciones.o: funciones.c edth.h
 	gcc -c funciones.c
+
+#compilador parser:
+parser.o: parser.c edth.h
+	gcc -c parser.c
 
 .PHONY: clean
 	#limpiar archivos .o:

@@ -1,7 +1,7 @@
 // Joan Francesc Pedro Garcia
 #include "edth.h"
 
-//3.2.1-Inicializar una matriz vacía de unas dimensiones determinadas
+//Inicializar una matriz vacía de unas dimensiones determinadas
 void iniEmptyMatrix(int files, int columnes, char matrix[files][columnes]) {
 	int f;
 	for (f = 0; f < files; f++) {
@@ -9,7 +9,7 @@ void iniEmptyMatrix(int files, int columnes, char matrix[files][columnes]) {
 	}
 }
 
-//3.2.2-Imprimir una matriz por consola
+//Imprimir una matriz por consola
 void printMatrix(int files, int columnes, char matrix[files][columnes]) {
 	int f;
 	for (f = 0; f < files; f++) {
@@ -19,12 +19,22 @@ void printMatrix(int files, int columnes, char matrix[files][columnes]) {
 	}
 }
 
-//3.2.3-Insertar un carácter en una posición de la matriz
+//Insertar un carácter en una posición de la matriz
 void insertCharOnMatrix(int files, int columnes, char matrix[files][columnes], int fila, int columna, char c) {
 	insertCharOnArray(columnes, matrix[fila], columna, c);
 }
 
-//3.2.4-Borrar un carácter de una posición de la matriz
+//Borrar un carácter de una posición de la matriz
 void deleteCharOnMatrix(int files, int columnes, char matrix[files][columnes], int fila, int columna) {
 	shiftLeftArray(columnes, matrix[fila], columna);
+}
+
+//Buscar un carácter en la matriz
+int searchCharOnMatrix(int files, int columnes, char matrix[files][columnes], int fila, int columna, char c) {
+	return searchCharOnArray(columnes, matrix[fila], columna, c);
+}
+
+//Buscar un carácter diferente en la matriz
+int searchNoCharOnMatrix(int files, int columnes, char matrix[files][columnes], int fila, int columna, char c) {
+	return searchNoCharOnArray(columnes, matrix[fila], columna, c);
 }

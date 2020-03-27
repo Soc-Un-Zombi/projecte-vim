@@ -1,17 +1,17 @@
 // Joan Francesc Pedro Garcia
 #include "edth.h"
 
-// 3.3.1-Establecer la ventana activa
+//Establecer la ventana activa
 void setActiveWindow(int appData[], int aw) {
 	appData[3] = aw;
 }
 
-//3.3.2-Inicializar una ventana (queda vacía)
+//Inicializar una ventana (queda vacía)
 void iniWindow(int appData[], char Windows[][appData[1]][appData[2]], int Window) {
 	iniEmptyMatrix(appData[1], appData[2], Windows[Window]);
 }
 
-//3.3.3-Inicializar todas las ventanas (todas quedan vacías)
+//Inicializar todas las ventanas (todas quedan vacías)
 void iniWindows(int appData[], char Windows[][appData[1]][appData[2]], int appCursors[][2]) {
 	int w, f, c;
 	for (w = 0; w < appData[0]; w++) {
@@ -25,19 +25,19 @@ void iniWindows(int appData[], char Windows[][appData[1]][appData[2]], int appCu
 	}
 }
 
-//3.3.4-Imprimir información de la aplicación
+//Imprimir información de la aplicación
 void printWindowInfo(int appData[], int appCursors[][2]) {
 	printf("%d - %d,%d\n", appData[3], appCursors[appData[3]][0], appCursors[appData[3]][1]);
 }
 
-//3.3.5-Imprimir una pantalla por consola
+//Imprimir una pantalla por consola
 void printWindow(int appData[], char matrix[appData[1]][appData[2]]) {
 	printf("   ----------\n");
 	printMatrix(appData[1], appData[2], matrix);
 	printf("   ----------\n");
 }
 
-//3.3.6-Imprimir la pantalla activa de la aplicación
+//Imprimir la pantalla activa de la aplicación
 void printCurrentWindow(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2]) {
 	printf("\n");
 	printWindowInfo(appData, appCursors);
@@ -46,7 +46,7 @@ void printCurrentWindow(int appData[], char windows[][appData[1]][appData[2]], i
 }
 
 
-//3.3.7-Comprobar que la fila es legal en la aplicación
+//Comprobar que la fila es legal en la aplicación
 bool isLegalFile(int appData[], int y) {
 	if (y < appData[1] && y >= 0) {
 		return true;
@@ -54,14 +54,14 @@ bool isLegalFile(int appData[], int y) {
 	return false;
 }
 
-//3.3.8-Establecer la fila del cursor en la ventana activa
+//Establecer la fila del cursor en la ventana activa
 void setYCursorOnWindow(int appData[], int appCursors[][2], int y) {
 	if (isLegalFile(appData, y)) {
 		y = appCursors[appData[3]][0];
 	}
 }
 
-//3.3.9-Comprobar que la columna es legal en la aplicación
+//Comprobar que la columna es legal en la aplicación
 bool isLegalColumn(int appData[], int x) {
 	if (x < appData[2] && x >= 0) {
 		return true;
@@ -69,9 +69,33 @@ bool isLegalColumn(int appData[], int x) {
 	return false;
 }
 
-//3.3.10-Establecer la columna del cursor en la ventana activa
+//Establecer la columna del cursor en la ventana activa
 void setXCursorOnWindow(int appData[], int appCursors[][2], int x) {
 	if (isLegalColumn(appData, x)) {
 		x = appCursors[appData[3]][1];
 	}
+}
+
+//Insertar un carácter en la posición actual en la ventana activa
+void insertCharOnWindow(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2], char c) {
+	insertCharOnMatrix(appData[1], appData[2], windows[appData[3]], appCursors[appData[3]][0], appCursors[appData[3]][1], c);
+	if (appCursors[appData[3]][1] < appData[2] - 1) {
+		appCursors[appData[3]][1]++;
+	}
+}
+
+
+//Borrar el carácter de la posición actual en la ventana activa
+void deleteCurrentPositionOnWindow(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2]) {
+	deleteCharOnMatrix(appData[1], appData[2], windows[appData[3]], appCursors[appData[3]][0], appCursors[appData[3]][1]);
+}
+
+//Buscar un carácter en la ventana activa
+int searchCharOnWindow(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2], char c) {
+	return searchCharOnMatrix(appData[1], appData[2], windows[appData[3]], appCursors[appData[3]][0], appCursors[appData[3]][1], c);
+}
+
+//Buscar un carácter diferente en la ventana activa
+int searchNoCharOnWindow(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2], char c) {
+	return searchNoCharOnMatrix(appData[1], appData[2], windows[appData[3]], appCursors[appData[3]][0], appCursors[appData[3]][1], c);
 }
