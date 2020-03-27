@@ -1,24 +1,31 @@
 # Joan Francesc Pedro Garcia
-#Este es el archivo makefile.
+#Archivo makefile.
 
-#compilador programa principal
+#compilador programa principal:
 programa: main.o arrays.o matrices.o ventanas.o
 	gcc -o programa main.o arrays.o matrices.o ventanas.o
 
-#compilador main
+#compilador main:
 main.o: main.c edth.h
 	gcc -c main.c
 
-#compilador arrays
+#compilador arrays:
 arrays.o: arrays.c edth.h
 	gcc -c arrays.c
 
-#compilador matrices
+#compilador matrices:
 matrices.o: matrices.c edth.h
 	gcc -c matrices.c
-#compilador ventanas
+
+#compilador ventanas:
 ventanas.o: ventanas.c edth.h
 	gcc -c ventanas.c
 
+#compilador funciones:
+funciones.o: funciones.c edth.h
+	gcc -c funciones.c
+
+.PHONY: clean
+	#limpiar archivos .o:
 clean:
-	rm *.o
+	rm -rf *.o

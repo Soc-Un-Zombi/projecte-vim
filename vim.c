@@ -233,8 +233,10 @@ int main(){
 	 */
 
 	int appData[4];
-	char windows[appData[0]][appData[1]][appData[2]];
-	int appCursors[appData[0]][2];
+	char windows [appData[0]] [appData[1]] [appData[2]];
+	int appCursors [appData[0]] [2];
+
+	iniWindows(appData, windows, appCursors);
 
 	return 0;
 }
