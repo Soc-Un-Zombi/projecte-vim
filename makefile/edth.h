@@ -32,5 +32,6 @@ bool isLegalColumn(int appData[], int x);
 void setXCursorOnWindow(int appData[], int appCursors[][2], int x);
 
 //  3.4: Funciones
+void iniappData(int appData[]);
 void insertCharOnWindow(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2], char c);
 void deleteCurrentPositionOnWindow(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2]);

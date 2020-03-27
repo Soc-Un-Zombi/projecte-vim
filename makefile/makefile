@@ -2,8 +2,8 @@
 #Archivo makefile.
 
 #compilador programa principal:
-programa: main.o arrays.o matrices.o ventanas.o
-	gcc -o programa main.o arrays.o matrices.o ventanas.o
+programa: main.o arrays.o matrices.o ventanas.o funciones.o
+	gcc -o programa main.o arrays.o matrices.o ventanas.o funciones.o
 
 #compilador main:
 main.o: main.c edth.h
