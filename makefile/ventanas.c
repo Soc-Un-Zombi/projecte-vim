@@ -39,8 +39,10 @@ void printWindow(int appData[], char matrix[appData[1]][appData[2]]) {
 
 //3.3.6-Imprimir la pantalla activa de la aplicación
 void printCurrentWindow(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2]) {
+	printf("\n");
 	printWindowInfo(appData, appCursors);
 	printWindow(appData, windows[appData[3]]);
+	printf("\n");
 }
 
 

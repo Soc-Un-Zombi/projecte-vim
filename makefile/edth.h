@@ -1,7 +1,7 @@
 // Joan Francesc Pedro Garcia
 #include <stdio.h>
 #include <stdbool.h>
-#define ESPAI 'a'
+#define ESPAI ' '
 
 //  basic
 

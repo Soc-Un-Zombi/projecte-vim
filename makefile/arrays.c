@@ -41,11 +41,11 @@ void shiftRightArray(int columnes, char array[], int columna) {
 void shiftLeftArray(int columnes, char array[], int columna) {
 	char moveleft[columnes];
 	int i;
-	for (i = columna - 1; i <= 0; i--) {
+	for (i = columna; i < columnes; i++) {
 		moveleft[i] = array[i+1];
 	}
-	array[columna] = ESPAI;
-	for (i = columna - 1; i <= 0; i--) {
+	moveleft[columnes - 1] = ESPAI;
+	for (i = columna; i < columnes; i++) {
 		array[i] = moveleft[i];
 	}
 }
