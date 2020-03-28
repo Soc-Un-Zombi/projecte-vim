@@ -57,7 +57,7 @@ bool isLegalFile(int appData[], int y) {
 //Establecer la fila del cursor en la ventana activa
 void setYCursorOnWindow(int appData[], int appCursors[][2], int y) {
 	if (isLegalFile(appData, y)) {
-		y = appCursors[appData[3]][0];
+		appCursors[appData[3]][0] = y;
 	}
 }
 
@@ -72,7 +72,7 @@ bool isLegalColumn(int appData[], int x) {
 //Establecer la columna del cursor en la ventana activa
 void setXCursorOnWindow(int appData[], int appCursors[][2], int x) {
 	if (isLegalColumn(appData, x)) {
-		x = appCursors[appData[3]][1];
+		appCursors[appData[3]][1] = x;
 	}
 }
 

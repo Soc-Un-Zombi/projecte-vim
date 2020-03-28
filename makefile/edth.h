@@ -1,6 +1,7 @@
 // Joan Francesc Pedro Garcia
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 #define ESPAI ' '
 
 //Arrays

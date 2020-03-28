@@ -17,28 +17,8 @@ int main(int argc, char *argv[]){
 	int appCursors [appData[0]] [2];
 	iniWindows(appData, windows, appCursors);
 
-	/*printCurrentWindow(appData, windows, appCursors);
-	parseInput(appData, windows, appCursors, "jjliHola Mudno");
-	printCurrentWindow(appData,windows,appCursors);
-	parseInput(appData,windows,appCursors,"&hhhxlid");
-	printCurrentWindow(appData,windows,appCursors);*/
-
-	printCurrentWindow(appData,windows,appCursors);
-	parseInput(appData, windows, appCursors, "jlkh");
-	printCurrentWindow(appData,windows,appCursors);
-	parseInput(appData, windows, appCursors, "jlkh");
-	printCurrentWindow(appData,windows,appCursors);
-	parseInput(appData, windows, appCursors, "jlkh");
-	printCurrentWindow(appData,windows,appCursors);
-	parseInput(appData, windows, appCursors, "iJ");
-	printCurrentWindow(appData,windows,appCursors);
-	parseInput(appData, windows, appCursors, "J");
-	printCurrentWindow(appData,windows,appCursors);
-	parseInput(appData, windows, appCursors, "o");
-	printCurrentWindow(appData,windows,appCursors);
-	parseInput(appData, windows, appCursors, "a");
-	printCurrentWindow(appData,windows,appCursors);
-	parseInput(appData, windows, appCursors, "n");
+	printCurrentWindow(appData, windows, appCursors);
+	parseInput(appData, windows, appCursors, argv[1]);
 	printCurrentWindow(appData,windows,appCursors);
 
 }

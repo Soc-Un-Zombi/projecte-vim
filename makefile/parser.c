@@ -68,6 +68,10 @@ void parser(int appData[], char windows[][appData[1]][appData[2]], int appCursor
         gotoBackWindow(appData);
         break;
 
+      case '0':
+        gotoBeginLine(appData, appCursors);
+        break;
+
     }
   } else if(mode == 1) {
     switch(input) {
@@ -81,7 +85,8 @@ void parser(int appData[], char windows[][appData[1]][appData[2]], int appCursor
 }
 
 void parseInput(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2], char input[]) {
-  for (size_t i = 0; i < size_t; i++) {
-    parser(appData, windows, appCursors, input[0]);
+  int i;
+  for (i = 0; i < strlen(input); i++) {
+    parser(appData, windows, appCursors, input[i]);
   }
 }
