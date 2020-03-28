@@ -32,9 +32,9 @@ void printWindowInfo(int appData[], int appCursors[][2]) {
 
 //Imprimir una pantalla por consola
 void printWindow(int appData[], char matrix[appData[1]][appData[2]]) {
-	printf("   ----------\n");
+	printf("   ---------------\n");
 	printMatrix(appData[1], appData[2], matrix);
-	printf("   ----------\n");
+	printf("   ---------------\n");
 }
 
 //Imprimir la pantalla activa de la aplicación

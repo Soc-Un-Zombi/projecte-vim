@@ -4,7 +4,6 @@
 void parser(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2], char input) {
 
   //mode 0 es normal i mode 1 es inserción
-
   static int mode = 0;
 
   if(mode == 0) {
@@ -39,6 +38,7 @@ void parser(int appData[], char windows[][appData[1]][appData[2]], int appCursor
 
       case 'w':
         gotoNextWord(appData, windows, appCursors);
+        break;
 
       case 'x':
         deleteCurrentPositionOnWindow(appData, windows, appCursors);
@@ -81,5 +81,7 @@ void parser(int appData[], char windows[][appData[1]][appData[2]], int appCursor
 }
 
 void parseInput(int appData[], char windows[][appData[1]][appData[2]], int appCursors[][2], char input[]) {
+  for (size_t i = 0; i < size_t; i++) {
     parser(appData, windows, appCursors, input[0]);
+  }
 }
