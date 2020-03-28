@@ -17,7 +17,6 @@ int main(int argc, char *argv[]){
 	int appCursors [appData[0]] [2];
 	iniWindows(appData, windows, appCursors);
 
-	printCurrentWindow(appData, windows, appCursors);
 	parseInput(appData, windows, appCursors, argv[1]);
 	printCurrentWindow(appData,windows,appCursors);
 

@@ -1,9 +1,28 @@
 # Joan Francesc Pedro Garcia
 #Archivo makefile.
 
+FUNTIONS = main.o arrays.o matrices.o ventanas.o funciones.o parser.o
+
+#execucions automatiques
+all: EDT clean
+
+#automatització proves
+Prueba1: all
+	./EDT "jjjklllhiEsto es un texto"
+Prueba2: all
+	./EDT "ttTiEscribo&jjllliTexto&g"
+Prueba3: all
+	./EDT "GiSon varias palabras&hhxxial&hhhx"
+Prueba4: all
+	./EDT "jjia b c d e f g h&hhhhwwiz"
+Prueba5: all
+	./EDT "ooOiLinea palabra&jLinea&DkhhhW"
+
 #compilador programa principal:
-programa: main.o arrays.o matrices.o ventanas.o funciones.o parser.o
-	gcc -o programa main.o arrays.o matrices.o ventanas.o funciones.o parser.o
+FUNTIONS = main.o arrays.o matrices.o ventanas.o funciones.o parser.o
+
+EDT: $(FUNTIONS)
+	gcc -o EDT $(FUNTIONS)
 
 #compilador main:
 main.o: main.c edth.h
