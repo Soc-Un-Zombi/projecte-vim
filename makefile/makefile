@@ -1,12 +1,10 @@
 # Joan Francesc Pedro Garcia
 #Archivo makefile.
 
-FUNTIONS = main.o arrays.o matrices.o ventanas.o funciones.o parser.o
-
-#execucions automatiques
+#execucions automatiques:
 all: EDT clean
 
-#automatització proves
+#automatització proves:
 Prueba1: all
 	./EDT "jjjklllhiEsto es un texto"
 Prueba2: all
